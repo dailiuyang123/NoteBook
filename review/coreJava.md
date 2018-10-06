@@ -35,8 +35,34 @@
 * 当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它 方法? 
    >不能(锁住整个对象，以及对象内的方法。)，一个对象的一个synchronized方法只能由一个线程访问。? 无论synchronized关键字加在 方法上还是对象上，它取得的锁都是对象，而不是把一段代码或函数当作锁――而且同步方法很 可能还会被其他线程的对象访问,每个对象只有一个锁（lock）与之相关联.
  * 简述synchronized和java.util.concurrent.locks.Lock的异同 ？ 
- > 主要相同点：Lock能完成synchronized所实现的所有功能 主要不同点：Lock有比synchronized更精确的线程语义和更好的性能。synchronized会自动释放 锁，而 Lock一定要求程序员手工释放，并且必须在finally从句中释放。
+   > 主要相同点：Lock能完成synchronized所实现的所有功能 主要不同点：Lock有比synchronized更精确的线程语义和更好的性能。synchronized会自动释放 锁，而 Lock一定要求程序员手工释放，并且必须在finally从句中释放。
  * JAVA语言如何进行异常处理
- > 在java运行程序中，异常分为 两类 一类是 虚拟机 错误。另外是运行异常。我们一般只对 异常进行处理。 处理异常有两种方式。 一种是直接抛出异常。让调用该方法的父方法进行处理。另外一种通过 try ... catch.. 的方式 进行 对异常 进行 铺货，与处理。
+   > 在java运行程序中，异常分为 两类 一类是 虚拟机 错误。另外是运行异常。我们一般只对 异常进行处理。 处理异常有两种方式。 一种是直接抛出异常。让调用该方法的父方法进行处理。另外一种通过 try ... catch.. 的方式 进行 对异常 进行 铺货，与处理。
  * 什么是java序列化，如何实现java序列化？ 
- > 序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流化。可以对流化 后的对象进行读写操作，也可将流化后的对象传输于网络之间。序列化是为了解决在对对象流进 行读写操作时所引发的问题。 序列化的实现：将需要被序列化的类实现Serializable接口，该接口没有需要实现的方法， implements Serializable只是为了标注该对象是可被序列化的，然后使用一个输出流(如： FileOutputStream)来构造一个ObjectOutputStream(对象流)对象，接着，使用 ObjectOutputStream对象的writeObject(Object obj)方法就可以将参数为obj的对象写出(即保存其 状态)，要恢复的话则用输入流。 
+   > 序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流化。可以对流化 后的对象进行读写操作，也可将流化后的对象传输于网络之间。序列化是为了解决在对对象流进 行读写操作时所引发的问题。 序列化的实现：将需要被序列化的类实现Serializable接口，该接口没有需要实现的方法， implements Serializable只是为了标注该对象是可被序列化的，然后使用一个输出流(如： FileOutputStream)来构造一个ObjectOutputStream(对象流)对象，接着，使用 ObjectOutputStream对象的writeObject(Object obj)方法就可以将参数为obj的对象写出(即保存其 状态)，要恢复的话则用输入流。 
+* java 创建对象有几种方式？√
+   >  java 共有 5创建对象的方式。 1. 通过关键字 “new ”, 2 通过反射 方法 newInstance()创建 3 通过反射 获取类的构造方法，然后在通过构造方法调用newInstance() 4 clone()方法直接克隆对象。5 通过反序列化        
+* Integer f1 = 100;        Integer f2 = 100;        Integer f3 = 150;        Integer f4 = 150;        System.out.println(f1 == f2);　　//true        System.out.println(f3 == f4);　　//false  
+  >  将int赋值给Integer时,若int的值在[-128,127]内,则会直接引用Intefer缓存池中的对象;不在,则创建新的Integer对象。
+* String、 StringBuffer,StringBuilder 类
+  > 当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象。String 是被 final 修饰的，他的长度是不可变的。就算调用 String 的
+    concat 方法，那也是把字符串拼接起来并重新创建一个对象，把拼接后的 String 的值赋给新创建的对象
+ * 两个相同的对象会有不同的的 hashcode 吗？
+  >不能，根据 hash code 的规定，这是不可能的。
+  * 有没有可能两个不相等的对象有有相同的 hashcode？
+  >有可能，两个不相等的对象可能会有相同的 hashcode 值，这就是为什么在 hashmap 中会有冲突。
+ #数据库 
+ * 数据库常用索引是什么？
+  > 数据库 索引是对表 内 一列或多列 进行 快速查询的数据结构。 常用的索引有 主键索引、唯一索引、复合索引（创建在两个列或者多个列上）索引数据结构一般是 B+ 树、或者是HASH 实现的查询。
+  
+  #框架部分
+  
+  * 使用 Spring 框架好处是什么？
+  <li> 控制反转: 实现了代码的松散耦合。对象不需要 创建 他们所 依赖的对象。</li>
+  <li> 面向切面编程（AOP） : spring 支持 面向切面编程。</li>
+  <li> 容器 ：spring 管理应用中对象 的生命周期与配置。</li>
+  <li>事务管理：spring 事务传播属性 默认 是 required </li>
+  
+  * spring 创建对象的三种方式
+  > 依据XML 配置文件 、 基于注解的配置(@Autoware) 、基于java的配置（@Configuration）
+  
