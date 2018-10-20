@@ -87,14 +87,30 @@
   <tr><td>方法区(Method Area)</td><td>方法区又称为 永久代 同样被线程共享，该区主要保存 类信息、静态变量、静态常量等 </td></tr>
   <tr><td>程序计数器(Program counter register)</td><td>程序计数器 是用来标识 当前线程执行字节码文件行号指示器 ；多线程情况下，每个线程都具有各自独立的程序计数器，所以该区域是非线程共享的内存区域 </td></tr>
   <tr><td>java栈(java stack)</td><td>java栈 是线程 私有的内存区域； 作用对象是 java 方法。 存储单位是 栈帧。 每个栈帧存放的是对应Java方法所必须的信息。</td></tr>
-    <tr><td>本地方法栈(native method stack)</td><td>和Java栈相似 也是线程私有的。不同的是该区域 存放的是Native 方法 native方法是非 java 语言编写的方法。</td></tr>
-    
+    <tr><td>本地方法栈(native method stack)</td><td>和Java栈相似 也是线程私有的。不同的是该区域 存放的是Native </td></tr>
   </table>
+  *  计算机网络 OSI七层模型
+   <table>
+   <tr><td>应用层</td><td rowspan="3">应用层是最接近每个具体的应用，主要负责进程之间的交互。应用层交互的数据单元成为 报文。常见协议： HTTP协议、ftp协议  <td></tr>
+   <tr><td>表示层</td></tr>
+   <tr><td>会话层</td></tr>
+   <tr><td>运输层</td><td>提供两个进程间通讯 提供通用的数据传输服务。常见的协议： TCP、UDP协议<td></tr>
+   <tr><td>网络层</td><td>网络层使用的是IP协议。分组时也叫IP数据报。 IP 端口 <td></tr>
+   <tr><td>数据链路层</td><td>将 网络层封装的数据报 分解成帧。<td></tr>
+   <tr><td>物理层</td><td>电缆、光缆 等硬件 <td></tr>
+   </table>
+  
   <h2>数据库</h2> 
  * 数据库常用索引是什么？
   > 数据库 索引是对表 内 一列或多列 进行 快速查询的数据结构。 常用的索引有 主键索引、唯一索引、复合索引（创建在两个列或者多个列上）索引数据结构一般是 B+ 树、或者是HASH 实现的查询。
   
+  * 数据库连接池 是什么意思？
+  > 因为 程序每次 获取和关闭 数据库连接 是一个耗时的操作。尤其是当客户端数量增加的时候，会消耗大量的资源，成本是非常高的。数据库 连接池 可以在应用服务器启动的时候建立很多个数据库连接并维护在一个池中。连接请求由池中的连接提供。在连接使用完毕以后，把连接归还到池中，以用于满足将来更多的请求。 
   
+  * 解释下驱动(Driver)在JDBC中的角色。
+  > JDBC驱动提供了特定厂商对JDBC API接口类的实现，驱动必须要提供java.sql包下面这些类的实现：Connection, Statement, PreparedStatement,CallableStatement, ResultSet和Driver。
+ 
+ 
   <h2>框架部分</h2>
   
   * 使用 Spring 框架好处是什么？
