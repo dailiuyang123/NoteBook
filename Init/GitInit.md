@@ -12,3 +12,19 @@
    ### 2. 然后汇报 一个 警告 。继续克隆 项目成功后 。
    ### 3. 查看 .ssh下 如果出现 了 Known_hosts 文件。 下次 就可以直接用 Idea clone 即可。   
    <a href='https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000'>参考博客</a>
+   
+   ## Git 常见指令
+   ```java
+    //查看 git 用户名、邮箱 
+    $ git config user.name 
+    $ git config user.email
+    //修改 git 用户名、邮箱
+    $ git config --global user.name 'XXX'
+    $ git config --global user.email 'youremail@example.com'
+    //生成密钥 指令--
+    $ ssh-keygen -t rsa -C "youremail@example.com"
+    
+    
+    
+   ```
+   
