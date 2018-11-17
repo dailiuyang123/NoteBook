@@ -9,3 +9,12 @@
 <ui>
   <li>  面试题</li>
 </ui>
+
+
+# 新技术列表
+
+* dubbo
+* springclould
+* docker
+* netty
+* 

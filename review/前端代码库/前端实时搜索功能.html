@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 实时 搜索 </title>
+
+    <style>
+        .d{ font-size:20px;}
+        .searcher {
+            background: rgba(255, 255, 255, 0);
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 6rem;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+
+        .searcher-main {
+            background: #F4F4F4;
+            position: absolute;
+            left: 50%;
+            top: 1.2rem;
+            margin-left: -45%;
+            border-radius: 1.6rem;
+            width: 80%;
+            height: 3rem;
+            line-height: 3rem;
+        }
+
+        .searcher-text {
+            width: 80%;
+            text-align: center;
+            border: none;
+            outline: none;
+            background: #F4F4F4;
+        }
+
+        .searcher-cancel {
+            position: absolute;
+            width: 10%;
+            height: 3rem;
+            line-height: 3rem;
+            color: #929292;
+            top: 1.2rem;
+            right: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="searcher">
+    <p class="searcher-main">
+        <i><img src="img/icon/icon-search-map.png"/></i>
+        <input class="searcher-text" placeholder="请输入档口名称"></input>
+    </p>
+    <p class="searcher-cancel">取消</p>
+</div>
+
+
+<div id="nav">
+        <ul>
+            <li><a href="test.html"><span>资讯中心</span></a></li>
+            <li><a href="test2.html"><span>网络编程</span></a></li>
+            <li><a href="test3.html"><span>实用技巧</span></a></li>
+            <li><a href="test4.html"><span>软件编程</span></a></li>
+            <li><a href="test5.html"><span >网页制作</span></a></li>
+            <li><a href="test6.html"><span>操作系统</span></a></li>
+        </ul>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    var lists= $("#nav span");
+    var val=new Array();
+    for(var i=0;i<lists.length;i++){
+        console.log(lists[i].innerHTML);
+        val[i]=lists[i].innerHTML;
+    }
+
+    //监听input框，实时渲染
+    $('.searcher-text').on('input', function() {
+        initSearchList(val);
+    });
+
+
+
+
+    //获取数据
+    function getvalue(){
+        var lists= $("#nav").find("a").val;
+        for(var i=0;i<lists.length;i++){
+            console.log(lists[i]);
+        }
+
+    }
+    //渲染搜索列表
+    function initSearchList(lists) {
+        // 清除  css 的 style 样式
+        $("#nav span").removeAttr("style");
+
+        var List = $('.searcher-land ul');
+        var params = {};
+        //搜索过滤字符
+        var SEARCH_KEY = $('.searcher-text').val();
+        console.log(SEARCH_KEY);
+        var key= replaceIllegalStr(SEARCH_KEY);
+        console.log(key);
+
+        for(var i=0;i<lists.length;i++){
+            console.log(lists[i]);
+            if(key==lists[i]){
+                var lists= $("#nav span");
+                lists[i].setAttribute("style","color: red;");
+            }
+
+        }
+
+
+    }
+
+    // 类似正则,目的是过滤掉一些无用的符号以免给后端接收数据带来不必要的麻烦。
+    function replaceIllegalStr(str) {
+        var reg;
+        var illegal_list = ["/", "\\",
+            "[", "]",
+            "{", "}",
+            "<", ">",
+            "＜", "＞",
+            "「", "」",
+            "：", "；",
+            "、", "•",
+            "^", "'", "\"",
+            "\r", "\r\n", "\\n", "\n"];
+        for (var i = 0; i < illegal_list.length; i++) {
+            if (str.indexOf(illegal_list[i]) >= 0) {
+                if (illegal_list[i] == '\\' || illegal_list[i] == '[') {
+                    reg = new RegExp('\\' + illegal_list[i], "g");
+                } else {
+                    reg = new RegExp(illegal_list[i], "g");
+                }
+                str = str.replace(reg, '');
+            }
+        }
+        return str.trim();
+    }
+
+</script>
+
+</body>
+</html>
