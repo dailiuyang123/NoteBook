@@ -13,8 +13,8 @@
    ### 3. 查看 .ssh下 如果出现 了 Known_hosts 文件。 下次 就可以直接用 Idea clone 即可。   
    <a href='https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000'>参考博客</a>
    
-   ## 注意如果是 GIthub. 可能上述配置 结束后，idea clone项目 仍然报:  'could not read from remote repository ' 错误 。
-     #### 可参考如下配置： 打开 IDEA setting-> git->将 SSH excutable : 选为 Native 即可
+   ## 注意如果是 GIthub. 可能上述配置 结束后，idea clone项目 仍然报:  'could not read from remote repository ' 错误  原因是你idea里 git配置默认是读取idea内置的配置。而不是你计算机内.ssh 文件内的配置。
+     #### 可参考如下配置： 打开 IDEA setting-> git->将 SSH executable : 选为 Native 即可 
    
    ## Git 常见指令
    ```java
