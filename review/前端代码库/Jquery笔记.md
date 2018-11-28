@@ -72,9 +72,9 @@ $(this).text();
  
 
  * js 判断 对象是否为空 的两种方式
- ```javascript
+ ```java
 var b = (JSON.stringify(data) == "{}");
-jquery的isEmptyObject方法 
+jquery的 isEmptyObject(obj)方法 
 ```
  
 
