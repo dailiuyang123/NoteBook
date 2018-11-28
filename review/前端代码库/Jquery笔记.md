@@ -1,40 +1,32 @@
 #Jquery 笔记
 
 * jquery 遍历
-
-  ``
-      $("li").each(function(){
+```javascript
+ $("li").each(function(){
         alert($(this).text())
       });
-  ``
+```
+
 * jquery 获取标签文本
-  ``
-     $(this).text();
-  ``
+```javascript
+$(this).text();
+```
+  
   
 * jquery 获取 h5 dom元素内 value属性的值
- ``
-   $("#ID").val();
- ``
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    ```javascript
+    $("#ID").val();
+    ```
+ 
+
   
   
  ## jquery 获取 元素内的值
  
  
  *jquery 获取下拉框 'SELECT' 选择的值
- 
-  ``
-                              <select id="LinkType">
+ ```html
+                               <select id="LinkType">
                                   <option selected="selected" >请选择</option>
                                   <option value="1" >HR系统</option>
                                   <option value="2" >办公系统</option>
@@ -49,9 +41,9 @@
                         	var v=$("#LinkType").val();
                         	console.log(v);
                         		
-                        	});       
-                               
-  ``
+                        	});    
+```
+ 
   
 ## javascript 笔记
   
@@ -59,8 +51,8 @@
 
 
 * js 遍历 整个对象获取整个对象 Key的集合。
- ``
-  //遍历map 返回keyset
+```javascript
+//遍历map 返回keyset
      function getKeySet(data) {
          var list=new Array();
          var i=0;
@@ -70,6 +62,20 @@
          }
          return list;
      }
- ``
+```
+ 
+ * js 声明对象的方式 两种方式
+ ```javascript
+   var navlink=new Object();
+   var navlink={};
+```
+ 
 
-  
+ * js 判断 对象是否为空 的两种方式
+ ```javascript
+var b = (JSON.stringify(data) == "{}");
+jquery的isEmptyObject方法 
+```
+ 
+
+    
