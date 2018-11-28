@@ -1,7 +1,7 @@
 #JSP CODE 
 
 * js文件内无法解析 EL表达式        解决方案
-```javascript
+```html
   <script type="text/javascript">
       var ctx = "${ctx}";
   </script>
