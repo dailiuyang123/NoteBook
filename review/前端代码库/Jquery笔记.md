@@ -58,6 +58,18 @@
 *  js内通过 EL表达式 获取集合对象，直接是一个数组对象。不需要 Json 进行对象转换。
 
 
-
+* js 遍历 整个对象获取整个对象 Key的集合。
+ ``
+  //遍历map 返回keyset
+     function getKeySet(data) {
+         var list=new Array();
+         var i=0;
+         for(var k in data ){//遍历packJson 对象的每个key/value对,k为key
+             list[i]=k;
+             i++;
+         }
+         return list;
+     }
+ ``
 
   
