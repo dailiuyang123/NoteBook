@@ -21,4 +21,22 @@
 
 ```
 
-* jsp 
+* JSP页面 获取后台 重定向方式：(redirect)  传参方式： request.setAttribute("key",value)的对象或者属性值.
+
+```java
+   JAVA 后台：
+       // 返回课程包装类的数据--用于页面显示
+       request.setAttribute("courseDto", courseDto);     
+```
+
+```jsp
+   <div class="static-item">
+   	<div class="meta">难度级别</div>
+   	<div class="meta-value">${courseDto.course.courseGrade }</div>
+   </div> 
+```
+
+* JSP 
+
+
+
