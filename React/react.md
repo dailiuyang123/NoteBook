@@ -52,4 +52,12 @@ class UserManage extends Component {
 
 ```
 
+* react 之 css 样式调整
+```javascript
+    //注意 在react 内引用样式，要用双大括号的形式引用。 
+   <div style={{float:"left"}}> </div>
+
+```
+
+
 

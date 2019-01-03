@@ -76,6 +76,26 @@ $(this).text();
 var b = (JSON.stringify(data) == "{}");
 jquery的 isEmptyObject(obj)方法 
 ```
- 
+ * js将 数字类型转为 String类型的方法：
+ ````javascript
+     var a=123; //数字类型
+     String(a); //字符串类型
+````
+* js 合并两个数组：
+```javascript
+   var a=[1,4,5,6];
+   var b=[2,4,6];
+   a.concat(b);   // a 合并 b 数组
+
+```
+* js 向数组追加元素：
+```javascript
+   var a =[1,3,5];
+   a.push(2);
+```
+
+
+
+
 
     
