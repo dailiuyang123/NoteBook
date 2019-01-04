@@ -94,6 +94,16 @@ jquery的 isEmptyObject(obj)方法
    a.push(2);
 ```
 
+* js 实现路由跳转
+```javascript
+   // 实现路由跳转   
+   window.location.href= URL;
+```
+
+
+
+
+
 
 
 
