@@ -47,6 +47,12 @@
 
 * 级联下拉列表回显
 ```javascript
+//收参
+let vals = this.props.form.getFieldsValue();
+//获取日期
+vals.endDate=vals.endDate['_d'];
+
+
       <FormItem
               {...formItemLayout}
               label="考核类型与考核周期"
