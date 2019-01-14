@@ -68,3 +68,21 @@ vals.endDate=vals.endDate['_d'];
             </FormItem>
 
 ```
+* 实时获取 input 输入框内输入的值
+```javascript
+// DOM 节点
+ <Input placeholder=""  maxLength={50} style={{width:'300px'}} onChange={(val)=>this.getRuleCname(val)} />
+
+// 获取规则名称 event.target.value获取输入的值
+  getRuleCname(event){
+    //alert(event.target.value)
+    if (event.target.value!==''&& event.target.value!==undefined){
+      this.setState({initTag:event.target.value});
+    }else {
+      this.setState({initTag:'计算公式'});
+    }
+
+  }
+```
+
+
