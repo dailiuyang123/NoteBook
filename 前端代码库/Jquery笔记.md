@@ -222,6 +222,48 @@ jquery的 isEmptyObject(obj)方法
    window.location.href= URL;
 ```
 
+* js 进行数据类型判断：
+ ```javascript
+ 一、typeof 直接返回数据类型字段，但是无法判断数组、null、对象
+typeof 1
+"number"
+
+typeof NaN
+"number"
+
+typeof "1"
+"string"
+
+typeof true
+"boolean"
+
+typeof undefined
+"undefined"
+
+typeof null
+"object"
+
+typeof []
+"object"
+
+typeof {}
+"object"
+
+二、instanceof 判断某个实例是不是属于原型
+
+// 构造函数
+function Fruit(name, color) {
+    this.name = name;
+    this.color = color;
+}
+var apple = new Fruit("apple", "red");
+
+// (apple != null)
+apple instanceof Object  // true
+apple instanceof Array   // false
+
+```
+
 
 
 
