@@ -12,4 +12,6 @@
 
 开启开机启动：systemctl enable firewalld.service
 
+注意： systemctl 指令 只在centos 7 及以上版本支持 7以下版本可以用 service 代替！
+
 ```
