@@ -119,4 +119,36 @@ ReactDOM.render(
 </Provider>, document.getElementById('root'))
 ```
 
+* react特性之Jsx
+  ```javascript
+     React 使用 JSX 来替代常规的 JavaScript。
+     
+     JSX 是一个看起来很像 XML 的 JavaScript 语法扩展。
+   
+     JSX优点:
+       1.JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化。
+       2.它是类型安全的，在编译过程中就能发现错误。
+       3.使用 JSX 编写模板更加简单快速。
+     JSX 语法
+        1.JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代
+        2. JSX 中使用 JavaScript 表达式。表达式写在花括号 {}
+        ReactDOM.render(
+            <div>
+              <h1>{1+1}</h1>
+            </div>
+            ,
+            document.getElementById('example')
+        ); 
+      JSX 允许在模板中插入数组，数组会自动展开所有成员
+          var arr = [
+            <h1>菜鸟教程</h1>,
+            <h2>学的不仅是技术，更是梦想！</h2>,
+          ];
+          ReactDOM.render(
+            <div>{arr}</div>,
+            document.getElementById('example')
+          );
+```
+
+
 
