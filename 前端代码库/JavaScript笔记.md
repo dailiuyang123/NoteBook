@@ -28,3 +28,10 @@ console.log(strify);    // ["1", "2", "3", "4", "巴德", "merge"]   字符串
 var arrParse = JSON.parse(strify);
 console.log(arrParse);  // ["1", "2", "3", "4", "巴德", "merge"]   数组
 ```
+
+##### js 定时器
+  * 1.倒计定时器：timename=setTimeout("function();",delaytime);
+    
+  *  2.循环定时器：timename=setInterval("function();",delaytime);
+
+
