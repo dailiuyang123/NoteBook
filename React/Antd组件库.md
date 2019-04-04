@@ -85,4 +85,17 @@ vals.endDate=vals.endDate['_d'];
   }
 ```
 
+* ant Table 组件
+```javascript
+   code： <Table dataSource={list} columns={colums} loading={loading} pagination={pagination} scroll={{x: 1800}}
+                        rowKey={record => record.userCode}/>
+                        
+      datasource: table 数据源
+      columns：table 包含的列
+      pagination： table 的组件配置（如分页组件）， 如果置为false 则为取消分页效果
+      scroll： 设置table的滚动条
+      rowKey:设置表内记录的唯一标识。一般为 记录ID                  
+                        
+```
+
 
