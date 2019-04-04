@@ -25,7 +25,8 @@
 ###### dva 组件详解
      
 * State 
-      ![](https://github.com/dailiuyang123/NoteBook/blob/master/pictrue/HTTPS%E9%AA%8C%E8%AF%81.png)
+     
+     ![](https://github.com/dailiuyang123/NoteBook/blob/master/pictrue/HTTPS%E9%AA%8C%E8%AF%81.png)
      
      
 
