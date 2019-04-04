@@ -1,3 +1,5 @@
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+
 # NoteBook
 学习新技术的笔记本
 
@@ -8,6 +10,8 @@
   <li>JSP 相关</li>
   <li> Linux Knowledge</li>
   <li>CSS knowledge</li>
+  <li>React相关</li>
+  <li>ES6 </li>
 </ui>
 
 <ui>
