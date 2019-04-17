@@ -43,6 +43,27 @@ $(this).text();
                         		
                         	});    
 ```
+* jquery 遍历下拉框(select)内的值
+```javascript
+    <script>
+    $(function(){
+        $("select").each(function(){
+            $(this).children("option").each(function(){
+                alert($(this).text())//每一个option
+                alert($(this).text()+"属于id为"+$(this).parent("select").attr("id")+"的select");
+            });
+        });
+    });
+    </script>
+    
+    <select id="test1">
+        <option>1111</option>
+        <option>2222</option>
+        <option>3333</option>
+    </select>
+
+```
+
  ### jquery 之 Ajax 
  <table style="width: 600px" border="1" cellspacing="2" cellpadding="2">
  <tbody>
