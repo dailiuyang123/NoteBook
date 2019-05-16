@@ -18,7 +18,7 @@ $(this).text();
     $("#ID").val();
     ```
  
-*jquery 获取元素(父节点,子节点,兄弟节点)
+* jquery 获取元素(父节点,子节点,兄弟节点)
    ```javascript
       $("#test1").parent(); // 父节点
        $("#test1").parents(); // 全部父节点
@@ -47,9 +47,18 @@ $(this).text();
   
   
  ## jquery 获取 元素内的值
+ * jquery .html() 与 .text() 方法
+    ```javascript
+       // 共同点: 都能获取选中元素内容
+       var content=$(selector).html();
+       var content1=$(selector).text();
+       //共同点：都可以： 设置元素内容
+       $(selector).html(content);
+       $(selector).text(content);
+       // 结论： 这两种方式几乎相同
+    ```
  
- 
- *jquery 获取下拉框 'SELECT' 选择的值
+ * jquery 获取下拉框 'SELECT' 选择的值
  ```html
                                <select id="LinkType">
                                   <option selected="selected" >请选择</option>
