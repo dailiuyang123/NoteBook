@@ -18,13 +18,47 @@ $(this).text();
     $("#ID").val();
     ```
  
+* jquery 获取元素(父节点,子节点,兄弟节点)
+   ```javascript
+      $("#test1").parent(); // 父节点
+       $("#test1").parents(); // 全部父节点
+       $("#test1").parents(".mui-content");
+       $("#test").children(); // 全部子节点
+       $("#test").children("#test1");
+       $("#test").contents(); // 返回#test里面的所有内容，包括节点和文本
+       $("#test").contents("#test1");
+       $("#test1").prev();  // 上一个兄弟节点
+       $("#test1").prevAll(); // 之前所有兄弟节点
+       $("#test1").next(); // 下一个兄弟节点
+       $("#test1").nextAll(); // 之后所有兄弟节点
+       $("#test1").siblings(); // 所有兄弟节点
 
+   ```
+   
+ * jquery 元素筛选
+   ```javascript
+           $("ul li").eq(1); // 选取ul li中匹配的索引顺序为1的元素(也就是第2个li元素)
+           $("ul li").first(); // 选取ul li中匹配的第一个元素
+           $("ul li").last(); // 选取ul li中匹配的最后一个元素
+           $("ul li").slice(1, 4); // 选取第2 ~ 4个元素
+           $("ul li").filter(":even"); // 选取ul li中所有奇数顺序的元素
+       
+   ```
   
   
  ## jquery 获取 元素内的值
+ * jquery .html() 与 .text() 方法
+    ```javascript
+       // 共同点: 都能获取选中元素内容
+       var content=$(selector).html();
+       var content1=$(selector).text();
+       //共同点：都可以： 设置元素内容
+       $(selector).html(content);
+       $(selector).text(content);
+       // 结论： 这两种方式几乎相同
+    ```
  
- 
- *jquery 获取下拉框 'SELECT' 选择的值
+ * jquery 获取下拉框 'SELECT' 选择的值
  ```html
                                <select id="LinkType">
                                   <option selected="selected" >请选择</option>
