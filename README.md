@@ -33,3 +33,6 @@
 
  * [Nigix 入门](http://tengine.taobao.org/book/index.html)
  
+# GitHub 访问速度慢解决方法链接。
+
+* https://zhuanlan.zhihu.com/p/93436925
