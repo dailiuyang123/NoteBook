@@ -4,22 +4,100 @@
 
 ## Hashmap 冲突怎么解决
 
+> hash冲突，在jdk1.7 版本中，在对应的hash值下，如果已经存在value，则会创建一个链表，将entry倒叙插入到链表中
+> 1.8 会对，对应hash卡槽的链表长度进行判断，如果链表长度超过8，则整个链表结果就会转换为红黑树。
+
 ## Spring中是怎么控制事务的
+
+> Spring 的事务，可以说是 Spring AOP 的一种实现。
+> AOP面向切面编程，即在不修改源代码的情况下，对原有功能进行扩展，通过代理类来对具体类进行操作。
+
+> spring的事务声明有两种方式，编程式和声明式。spring主要是通过“声明式事务”的方式对事务进行管理，即在配置文件中进行声明，通过AOP将事务切面切入程序，最大的好处是大大减少了代码量。
 
 ## 二叉树丛子节点往上遍历
 
 ## 多线程顺序交替打印
-
+```JAVA
+public class ABC_Lock {
+    private static Lock lock = new ReentrantLock();
+    private static int state = 0;
+ 
+    static class MyThread extends Thread{
+        int num;
+        String letter;
+ 
+        public MyThread(String letter, int num) {
+            this.num = num;
+            this.letter = letter;
+        }
+ 
+        public void run() {
+            for (int i = 0; i < 10; ) {
+                try {
+                    lock.lock();
+                    while (state % 3 == num){
+                        System.out.print(letter);
+                        state++;
+                        i++;//变量自增必须写在这
+                    }
+                }finally {
+                    lock.unlock();
+                }
+ 
+            }
+        }
+    }
+ 
+    public static void main(String[] args) {
+        new MyThread("A",0).start();
+        new MyThread("B",1).start();
+        new MyThread("C",2).start();
+    }
+}
+```
 ## spring @transitional 是怎么生效的
+
+> 自定义注解
 
 ## spring 怎么解决循环依赖的
 
+> * Spring bean 对象创建过程：在Spring中，对象的实例化是通过反射实现的，而对象的属性则是在对象实例化之后通过一定的方式设置的<br/>
+<img width='600' src='https://pic2.zhimg.com/80/v2-666ec714ceda5e5be889b37c361d806d_720w.jpg'> <BR/>
+> * 三级缓存 
 ## mysql为啥要使用B+树
-
-## 消息队列：消息丢失，重复消费
+> 快
+## 消息队列：消息丢失，重复消费，消息队列阻塞
+> * 消息丢失：
+> * 1. 消息队列持久化
+> * 2. ACK 手动确认机制
+> * 重复性消费：
+> * 业务层处理: 保证消息消费的幂等性
+> * 消息队列阻塞：
+> 临时紧急扩容
+> https://blog.csdn.net/weixin_44259720/article/details/104845731?utm_term=%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E6%B6%88%E6%81%AF%E9%98%BB%E5%A1%9E%E9%97%AE%E9%A2%98&utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-2-104845731&spm=3001.4430
 
 
 ## 股票最大收益问题
+
+> 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
+注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+
+```java
+示例 1:
+输入: [7,1,5,3,6,4]
+输出: 7
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。
+
+示例 2:
+输入: [1,2,3,4,5]
+输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
+因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+
+```
 
 ## 阿里算法题：
 
